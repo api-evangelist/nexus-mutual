@@ -1,0 +1,185 @@
+name: Nexus Mutual
+description: >
+  Nexus Mutual is a decentralized insurance protocol built on Ethereum that
+  enables members to share risk through a discretionary mutual structure.
+  Since 2019 it has provided over 10,000 covers protecting more than $6 billion
+  in crypto assets against smart contract hacks, custody failure, slashing
+  events, depeg occurrences, and bespoke protocol risks. The public Cover Router
+  REST API exposes endpoints for querying quote pricing, per-product and
+  per-pool capacity, and the full product catalogue, enabling third-party
+  frontends and integrators to build point-of-sale cover purchase flows on top
+  of the Nexus Mutual protocol.
+image: https://nexusmutual.io/favicon.ico
+url: https://nexusmutual.io
+baseURL: https://api.nexusmutual.io
+tags:
+  - Decentralized Insurance
+  - DeFi
+  - Ethereum
+  - Smart Contract Cover
+  - Crypto Insurance
+  - Protocol Protection
+  - Staking
+  - Claims
+created: "2019-01-01"
+modified: "2026-06-14"
+specificationVersion: "0.19"
+apis:
+  - name: Nexus Mutual Cover Router API
+    description: >
+      REST API that computes optimal capacity allocation across Nexus Mutual
+      staking pools and returns premium quotes, per-product capacity, and
+      per-pool capacity data for cover buyers and integrators building
+      point-of-sale insurance flows on Ethereum.
+    image: https://nexusmutual.io/favicon.ico
+    humanURL: https://docs.nexusmutual.io/developers/
+    baseURL: https://api.nexusmutual.io/v2
+    tags:
+      - Quote
+      - Capacity
+      - Cover Products
+      - Staking Pools
+      - Insurance
+    properties:
+      - type: Documentation
+        url: https://docs.nexusmutual.io/developers/
+      - type: OpenAPI
+        url: https://api.nexusmutual.io/v2/api/docs/
+      - type: GitHubRepository
+        url: https://github.com/NexusMutual/cover-router
+    contact:
+      - FN: Nexus Mutual
+        url: https://nexusmutual.io/contact
+    endpoints:
+      - name: Get Quote
+        description: >
+          Returns premium pricing and optimal staking pool allocation for a
+          cover purchase request. Batches current capacities, maps them with
+          price per pool, and selects the cheapest capacity combination.
+        path: /v2/quote
+        method: GET
+        parameters:
+          - name: productId
+            in: query
+            required: true
+            description: Unique identifier of the cover product
+          - name: coverAmount
+            in: query
+            required: true
+            description: Amount of cover requested in wei
+          - name: period
+            in: query
+            required: false
+            description: Coverage period in days (28–365)
+          - name: paymentAsset
+            in: query
+            required: false
+            description: Asset ID used to pay the premium (ETH, DAI, USDC, cbBTC)
+      - name: Get All Capacity
+        description: >
+          Returns current available capacity across all products for a default
+          period of 30 days, including allocatedNxm, minAnnualPrice,
+          maxAnnualPrice, and per-asset availableCapacity.
+        path: /v2/capacity
+        method: GET
+        parameters:
+          - name: period
+            in: query
+            required: false
+            description: Coverage period in days (28–365, default 30)
+          - name: withPools
+            in: query
+            required: false
+            description: When true includes capacityPerPool breakdown per product
+      - name: Get Product Capacity
+        description: >
+          Returns available capacity for a single cover product across all
+          staking pools, with optional per-pool breakdown.
+        path: /v2/capacity/{productId}
+        method: GET
+        parameters:
+          - name: productId
+            in: path
+            required: true
+            description: Unique identifier of the cover product
+          - name: period
+            in: query
+            required: false
+            description: Coverage period in days (28–365, default 30)
+          - name: withPools
+            in: query
+            required: false
+            description: When true includes capacityPerPool detail
+      - name: Get Pool Capacity
+        description: >
+          Returns capacity for all products within a specific staking pool for
+          the requested period.
+        path: /v2/capacity/pools/{poolId}
+        method: GET
+        parameters:
+          - name: poolId
+            in: path
+            required: true
+            description: Unique identifier of the staking pool
+          - name: period
+            in: query
+            required: false
+            description: Coverage period in days (28–365, default 30)
+      - name: Get Pool Product Capacity
+        description: >
+          Returns capacity and pricing for a specific product within a specific
+          staking pool, including minAnnualPrice and maxAnnualPrice.
+        path: /v2/capacity/pools/{poolId}/products/{productId}
+        method: GET
+        parameters:
+          - name: poolId
+            in: path
+            required: true
+            description: Unique identifier of the staking pool
+          - name: productId
+            in: path
+            required: true
+            description: Unique identifier of the cover product
+          - name: period
+            in: query
+            required: false
+            description: Coverage period in days (28–365, default 30)
+      - name: Get Products
+        description: >
+          Returns the full catalogue of cover products offered by the Nexus
+          Mutual protocol, including product name, category, coverAssets,
+          pricing parameters, deprecation status, and allowed staking pools.
+        path: /v2/products
+        method: GET
+
+common:
+  - type: Plans
+    url: https://nexusmutual.io/plans/
+  - type: RateLimits
+    url: https://nexusmutual.io/rate-limits/
+  - type: FinOps
+    url: https://nexusmutual.io/finops/
+  - type: GitHubOrganization
+    url: https://github.com/NexusMutual
+  - type: PrivacyPolicy
+    url: https://v2.nexusmutual.io/assets/Privacy-Policy.pdf
+  - type: TermsOfService
+    url: https://v2.nexusmutual.io/assets/Terms-of-Use.pdf
+  - type: StatusPage
+    url: https://dune.com/nexus_mutual
+  - type: Documentation
+    url: https://docs.nexusmutual.io/
+  - type: SDK
+    url: https://sdk.nexusmutual.io/
+  - type: BugBounty
+    url: https://immunefi.com/bounty/nexusmutual/
+  - type: Security
+    url: https://docs.nexusmutual.io/resources/audits-and-security/
+  - type: DataAnalytics
+    url: https://dune.com/nexus_mutual
+  - type: Application
+    url: https://app.nexusmutual.io/
+maintainers:
+  - FN: Collective Risk Services CIC
+    url: https://nexusmutual.io
+    adr: "71-75 Shelton Street, Covent Garden, London, United Kingdom, WC2H 9JQ"

@@ -1,0 +1,22 @@
+plans:
+  - name: Open Protocol Access
+    description: >
+      The Nexus Mutual Cover Router API is publicly accessible with no
+      authentication or API key required. Any developer or integrator can
+      query capacity, pricing, and product data freely. Cover purchases
+      are executed on-chain via smart contracts and require membership
+      (for claims) and payment of gas fees on Ethereum mainnet.
+    url: https://docs.nexusmutual.io/protocol/integrations/
+    features:
+      - Free public REST API access
+      - No API key required
+      - Quote and capacity endpoints open to all
+      - Product catalogue queryable without authentication
+      - On-chain cover purchase via smart contracts
+      - Commission up to 25% available for integrators
+    limitations:
+      - Cover purchases require Ethereum wallet and gas fees
+      - Claims submission requires Nexus Mutual membership (NXM token)
+      - UI integrators must display mandatory T&C disclaimers
+      - Restricted countries apply (see Terms of Use)
+      - Commission destination address must be whitelisted by Nexus Mutual

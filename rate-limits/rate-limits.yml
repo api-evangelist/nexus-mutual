@@ -1,0 +1,16 @@
+rateLimits:
+  - name: Cover Router API Rate Limits
+    description: >
+      Nexus Mutual does not publish explicit rate limit thresholds for the
+      public Cover Router REST API (api.nexusmutual.io). The API is intended
+      for integration use by third-party frontends and aggregators. Developers
+      building high-frequency or production applications should contact Nexus
+      Mutual directly for guidance on responsible usage patterns and any
+      applicable limits.
+    url: https://docs.nexusmutual.io/protocol/integrations/
+    contact: https://nexusmutual.io/contact
+    notes:
+      - No published rate limit tiers or quota documentation found
+      - API is unauthenticated; standard abuse protection is assumed
+      - High-volume integrators should coordinate with Nexus Mutual team
+      - On-chain transactions are subject to Ethereum network gas limits

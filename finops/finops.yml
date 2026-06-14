@@ -1,0 +1,43 @@
+finops:
+  - name: Nexus Mutual FinOps Model
+    description: >
+      Nexus Mutual operates as a decentralized mutual on Ethereum. Cost
+      considerations for API consumers and integrators are as follows:
+    url: https://nexusmutual.io
+    costFactors:
+      - name: Cover Router API
+        cost: Free
+        description: >
+          REST API calls to api.nexusmutual.io are free of charge. No
+          subscription, API key, or usage fee is required to query quotes,
+          capacity, or product data.
+      - name: Cover Premium
+        cost: Variable (dynamic pricing)
+        description: >
+          Cover premiums are set dynamically per staking pool based on
+          capacity utilization and demand. Annual rates typically range from
+          0.0% to 8.0% of covered amount depending on product risk profile.
+          Premiums are paid in ETH, DAI, USDC, or cbBTC.
+      - name: Ethereum Gas Fees
+        cost: Variable
+        description: >
+          On-chain transactions (buyCover, submitClaim) require payment of
+          Ethereum mainnet gas fees. Costs fluctuate with network congestion.
+      - name: Integrator Commission
+        cost: Up to 25% of premium
+        description: >
+          Third-party point-of-sale integrators may apply a commission rate
+          up to 25% on top of the cover premium. This fee is directed to the
+          integrator's specified wallet address and is disclosed to the buyer.
+      - name: NXM Membership
+        cost: Variable (token purchase)
+        description: >
+          Filing claims requires Nexus Mutual membership obtained by holding
+          NXM tokens. NXM is purchased on the open market or via the RAMM
+          (Resilient AMM) within the protocol at market-determined prices.
+    reserves:
+      totalReserves: "$100M+"
+      description: >
+        Nexus Mutual maintains over $100M in protocol reserves backing all
+        active covers. Reserve levels are publicly verifiable on-chain.
+    analytics: https://dune.com/nexus_mutual
