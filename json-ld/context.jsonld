@@ -1,0 +1,158 @@
+{
+  "@context": {
+    "@version": 1.1,
+    "schema": "https://schema.org/",
+    "nm": "https://nexusmutual.io/vocab/",
+    "xsd": "http://www.w3.org/2001/XMLSchema#",
+
+    "CoverProduct": {
+      "@id": "nm:CoverProduct",
+      "@type": "@id"
+    },
+    "StakingPool": {
+      "@id": "nm:StakingPool",
+      "@type": "@id"
+    },
+    "Cover": {
+      "@id": "nm:Cover",
+      "@type": "@id"
+    },
+    "CapacityResult": {
+      "@id": "nm:CapacityResult",
+      "@type": "@id"
+    },
+    "Quote": {
+      "@id": "nm:Quote",
+      "@type": "@id"
+    },
+    "PricingResult": {
+      "@id": "nm:PricingResult",
+      "@type": "@id"
+    },
+    "AssetInfo": {
+      "@id": "nm:AssetInfo",
+      "@type": "@id"
+    },
+
+    "productId": {
+      "@id": "nm:productId",
+      "@type": "xsd:integer"
+    },
+    "poolId": {
+      "@id": "nm:poolId",
+      "@type": "xsd:integer"
+    },
+    "assetId": {
+      "@id": "nm:assetId",
+      "@type": "xsd:integer"
+    },
+    "period": {
+      "@id": "nm:period",
+      "@type": "xsd:integer",
+      "@comment": "Coverage period in days (28-365)"
+    },
+    "coverAsset": {
+      "@id": "nm:coverAsset",
+      "@type": "xsd:integer"
+    },
+    "coverEditId": {
+      "@id": "nm:coverEditId",
+      "@type": "xsd:integer"
+    },
+    "amount": {
+      "@id": "nm:amount",
+      "@type": "xsd:string",
+      "@comment": "Amount in smallest unit of the asset (e.g. wei for ETH)"
+    },
+    "allocatedNxm": {
+      "@id": "nm:allocatedNxm",
+      "@type": "xsd:string",
+      "@comment": "NXM allocated to active covers (in NXM wei)"
+    },
+    "minAnnualPrice": {
+      "@id": "nm:minAnnualPrice",
+      "@type": "xsd:string",
+      "@comment": "Minimum annual price as decimal fraction (0-1)"
+    },
+    "maxAnnualPrice": {
+      "@id": "nm:maxAnnualPrice",
+      "@type": "xsd:string",
+      "@comment": "Maximum annual price as decimal fraction (0-1)"
+    },
+    "annualPrice": {
+      "@id": "nm:annualPrice",
+      "@type": "xsd:string",
+      "@comment": "Annual price in basis points (0-10000); divide by 10000 for decimal rate"
+    },
+    "targetPrice": {
+      "@id": "nm:targetPrice",
+      "@type": "xsd:integer",
+      "@comment": "Target price in basis points (0-10000)"
+    },
+    "weightedAveragePrice": {
+      "@id": "nm:weightedAveragePrice",
+      "@type": "xsd:integer",
+      "@comment": "Capacity-weighted average price in basis points (0-10000)"
+    },
+    "utilizationRate": {
+      "@id": "nm:utilizationRate",
+      "@type": "xsd:integer",
+      "@comment": "Pool utilization in basis points (0-10000)"
+    },
+    "premiumInNXM": {
+      "@id": "nm:premiumInNXM",
+      "@type": "xsd:string"
+    },
+    "premiumInAsset": {
+      "@id": "nm:premiumInAsset",
+      "@type": "xsd:string"
+    },
+    "totalCoverAmountInAsset": {
+      "@id": "nm:totalCoverAmountInAsset",
+      "@type": "xsd:string"
+    },
+    "coverAmountInAsset": {
+      "@id": "nm:coverAmountInAsset",
+      "@type": "xsd:string"
+    },
+    "skip": {
+      "@id": "nm:skip",
+      "@type": "xsd:boolean"
+    },
+    "symbol": {
+      "@id": "schema:name"
+    },
+    "decimals": {
+      "@id": "nm:decimals",
+      "@type": "xsd:integer"
+    },
+    "availableCapacity": {
+      "@id": "nm:availableCapacity",
+      "@container": "@set"
+    },
+    "capacityPerPool": {
+      "@id": "nm:capacityPerPool",
+      "@container": "@set"
+    },
+    "productsCapacity": {
+      "@id": "nm:productsCapacity",
+      "@container": "@set"
+    },
+    "poolAllocationRequests": {
+      "@id": "nm:poolAllocationRequests",
+      "@container": "@list"
+    },
+    "pricePerPool": {
+      "@id": "nm:pricePerPool",
+      "@container": "@set"
+    },
+    "asset": {
+      "@id": "nm:asset",
+      "@type": "@id"
+    },
+    "quote": {
+      "@id": "nm:quote",
+      "@type": "@id"
+    }
+  }
+}

@@ -1,0 +1,49 @@
+{
+  "summary": "Get capacity for product 1 with per-pool breakdown",
+  "request": {
+    "method": "GET",
+    "url": "https://api.nexusmutual.io/v2/capacity/1",
+    "parameters": {
+      "period": 30
+    }
+  },
+  "response": {
+    "status": 200,
+    "body": {
+      "productId": 1,
+      "availableCapacity": [
+        {
+          "assetId": 1,
+          "amount": "1000000000000000000",
+          "asset": {
+            "id": 1,
+            "symbol": "ETH",
+            "decimals": 18
+          }
+        }
+      ],
+      "allocatedNxm": "500000000000000000",
+      "minAnnualPrice": "0.025",
+      "maxAnnualPrice": "0.1",
+      "capacityPerPool": [
+        {
+          "poolId": 1,
+          "availableCapacity": [
+            {
+              "assetId": 1,
+              "amount": "500000000000000000",
+              "asset": {
+                "id": 1,
+                "symbol": "ETH",
+                "decimals": 18
+              }
+            }
+          ],
+          "allocatedNxm": "250000000000000000",
+          "minAnnualPrice": "0.025",
+          "maxAnnualPrice": "0.1"
+        }
+      ]
+    }
+  }
+}

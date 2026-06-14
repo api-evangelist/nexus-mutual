@@ -1,0 +1,41 @@
+{
+  "summary": "Get a cover quote for product 1, covering 1 ETH for 30 days",
+  "request": {
+    "method": "GET",
+    "url": "https://api.nexusmutual.io/v2/quote",
+    "parameters": {
+      "productId": 1,
+      "amount": "1000000000000000000",
+      "period": 30,
+      "coverAsset": 0
+    }
+  },
+  "response": {
+    "status": 200,
+    "body": {
+      "quote": {
+        "totalCoverAmountInAsset": "1000000000000000000",
+        "annualPrice": "250",
+        "premiumInNXM": "12500000000000000",
+        "premiumInAsset": "2055000000000000",
+        "poolAllocationRequests": [
+          {
+            "poolId": "1",
+            "coverAmountInAsset": "600000000000000000",
+            "skip": false
+          },
+          {
+            "poolId": "3",
+            "coverAmountInAsset": "400000000000000000",
+            "skip": false
+          }
+        ],
+        "asset": {
+          "id": 0,
+          "symbol": "ETH",
+          "decimals": 18
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,72 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "https://api.nexusmutual.io/schemas/CapacityResult",
+  "title": "CapacityResult",
+  "description": "Capacity data for a cover product, including available capacity per asset and NXM allocation.",
+  "type": "object",
+  "properties": {
+    "productId": {
+      "type": "integer",
+      "description": "The product id"
+    },
+    "availableCapacity": {
+      "type": "array",
+      "description": "The maximum available capacity across all assets.",
+      "items": {
+        "$ref": "#/definitions/AvailableCapacity"
+      }
+    },
+    "allocatedNxm": {
+      "type": "string",
+      "description": "The used capacity amount for active covers (in NXM wei)."
+    },
+    "minAnnualPrice": {
+      "type": "string",
+      "description": "The minimal annual price as a decimal fraction between 0 and 1."
+    },
+    "maxAnnualPrice": {
+      "type": "string",
+      "description": "The maximal annual price as a decimal fraction between 0 and 1."
+    }
+  },
+  "definitions": {
+    "AssetInfo": {
+      "type": "object",
+      "description": "An object containing asset info",
+      "properties": {
+        "id": {
+          "type": "integer",
+          "description": "The id of the asset"
+        },
+        "symbol": {
+          "type": "string",
+          "description": "The symbol of the asset (e.g. ETH, DAI)"
+        },
+        "decimals": {
+          "type": "integer",
+          "description": "The number of decimal places for the asset",
+          "example": 18
+        }
+      },
+      "required": ["id", "symbol", "decimals"]
+    },
+    "AvailableCapacity": {
+      "type": "object",
+      "description": "Available capacity for a specific asset",
+      "properties": {
+        "assetId": {
+          "type": "integer",
+          "description": "The asset id"
+        },
+        "amount": {
+          "type": "string",
+          "description": "The capacity amount expressed in the asset's smallest unit (e.g. wei for ETH)"
+        },
+        "asset": {
+          "$ref": "#/definitions/AssetInfo"
+        }
+      },
+      "required": ["assetId", "amount", "asset"]
+    }
+  }
+}

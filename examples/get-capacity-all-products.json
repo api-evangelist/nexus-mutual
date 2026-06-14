@@ -1,0 +1,58 @@
+{
+  "summary": "Get capacity for all cover products with a 30-day period",
+  "request": {
+    "method": "GET",
+    "url": "https://api.nexusmutual.io/v2/capacity/",
+    "parameters": {
+      "period": 30
+    }
+  },
+  "response": {
+    "status": 200,
+    "body": [
+      {
+        "productId": 1,
+        "availableCapacity": [
+          {
+            "assetId": 0,
+            "amount": "5000000000000000000",
+            "asset": {
+              "id": 0,
+              "symbol": "ETH",
+              "decimals": 18
+            }
+          },
+          {
+            "assetId": 1,
+            "amount": "10000000000000000000000",
+            "asset": {
+              "id": 1,
+              "symbol": "DAI",
+              "decimals": 18
+            }
+          }
+        ],
+        "allocatedNxm": "250000000000000000000",
+        "minAnnualPrice": "0.025",
+        "maxAnnualPrice": "0.1"
+      },
+      {
+        "productId": 2,
+        "availableCapacity": [
+          {
+            "assetId": 0,
+            "amount": "2000000000000000000",
+            "asset": {
+              "id": 0,
+              "symbol": "ETH",
+              "decimals": 18
+            }
+          }
+        ],
+        "allocatedNxm": "100000000000000000000",
+        "minAnnualPrice": "0.03",
+        "maxAnnualPrice": "0.08"
+      }
+    ]
+  }
+}

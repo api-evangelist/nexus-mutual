@@ -1,0 +1,120 @@
+{
+  "title": "Nexus Mutual Cover Router API Vocabulary",
+  "description": "Domain terminology and concept definitions for the Nexus Mutual decentralized insurance protocol and Cover Router API.",
+  "version": "2.4.1",
+  "source": "https://api.nexusmutual.io/v2/api/docs/",
+  "terms": [
+    {
+      "term": "Cover",
+      "definition": "A decentralized insurance policy purchased from the Nexus Mutual protocol that protects a member against specified risk events such as smart contract hacks, custody failure, slashing, or depeg.",
+      "related": ["coverAsset", "coverAmount", "period", "productId"]
+    },
+    {
+      "term": "Cover Product",
+      "definition": "A specific insurable risk category offered by the Nexus Mutual protocol (e.g., smart contract cover for a specific protocol). Each product has a unique productId.",
+      "related": ["productId", "CapacityResult", "PricingResult"]
+    },
+    {
+      "term": "Staking Pool",
+      "definition": "A smart contract pool of NXM tokens staked by Nexus Mutual members who underwrite risk. Each pool can provide capacity for one or more cover products at a given price.",
+      "related": ["poolId", "capacityPerPool", "poolAllocationRequests"]
+    },
+    {
+      "term": "Capacity",
+      "definition": "The maximum amount of cover that can be purchased for a given product, limited by the total NXM staked in pools underwriting that product.",
+      "related": ["availableCapacity", "allocatedNxm", "CapacityResult"]
+    },
+    {
+      "term": "Quote",
+      "definition": "A calculated premium estimate for a specific cover request, including the total premium in NXM and the cover asset, and the optimal pool allocation to fulfil the cover.",
+      "related": ["premiumInNXM", "premiumInAsset", "poolAllocationRequests", "annualPrice"]
+    },
+    {
+      "term": "Premium",
+      "definition": "The price paid by a cover buyer for a Nexus Mutual policy. Can be paid in NXM or the cover asset (ETH, DAI, USDC, etc.).",
+      "related": ["premiumInNXM", "premiumInAsset", "annualPrice"]
+    },
+    {
+      "term": "productId",
+      "definition": "An integer identifier uniquely identifying a cover product within the Nexus Mutual protocol.",
+      "type": "integer"
+    },
+    {
+      "term": "poolId",
+      "definition": "An integer identifier uniquely identifying a staking pool within the Nexus Mutual protocol.",
+      "type": "integer"
+    },
+    {
+      "term": "coverAsset",
+      "definition": "The asset in which a cover amount is denominated. Identified by an integer assetId (e.g., 0 = ETH, 1 = DAI). Determines the unit for premiumInAsset.",
+      "type": "integer",
+      "knownValues": [
+        {"id": 0, "symbol": "ETH", "decimals": 18},
+        {"id": 1, "symbol": "DAI", "decimals": 18}
+      ]
+    },
+    {
+      "term": "period",
+      "definition": "The duration of a cover policy expressed in days. Must be between 28 and 365 days (inclusive). Defaults to 30 days when not specified.",
+      "type": "integer",
+      "minimum": 28,
+      "maximum": 365,
+      "default": 30
+    },
+    {
+      "term": "allocatedNxm",
+      "definition": "The amount of NXM tokens already committed to active covers within a pool or product. Expressed as a string integer in NXM wei.",
+      "type": "string (integer in wei)"
+    },
+    {
+      "term": "annualPrice",
+      "definition": "The annual premium rate for a cover, expressed as an integer in basis points (0-10,000). Divide by 10,000 to obtain the decimal rate (e.g., 250 = 2.5% per year).",
+      "type": "string (basis points)"
+    },
+    {
+      "term": "minAnnualPrice",
+      "definition": "The minimum annual price available across all pools for a product, expressed as a decimal fraction between 0 and 1 (e.g., 0.025 = 2.5%).",
+      "type": "string (decimal fraction)"
+    },
+    {
+      "term": "maxAnnualPrice",
+      "definition": "The maximum annual price available across any pool for a product, expressed as a decimal fraction between 0 and 1 (e.g., 0.1 = 10%).",
+      "type": "string (decimal fraction)"
+    },
+    {
+      "term": "targetPrice",
+      "definition": "The intended annual price set by a staking pool manager for a specific product, expressed in basis points (0-10,000).",
+      "type": "integer (basis points)"
+    },
+    {
+      "term": "utilizationRate",
+      "definition": "The proportion of a staking pool's capacity currently committed to active covers, expressed in basis points (0-10,000). A value of 5000 indicates 50% utilization.",
+      "type": "integer (basis points)"
+    },
+    {
+      "term": "poolAllocationRequests",
+      "definition": "An array of pool-level cover allocation instructions returned in a quote and required as input data for the on-chain buy-cover transaction.",
+      "type": "array"
+    },
+    {
+      "term": "NXM",
+      "definition": "The native governance and staking token of the Nexus Mutual protocol, used by members to stake in pools, vote on claims, and optionally pay premiums.",
+      "related": ["premiumInNXM", "allocatedNxm"]
+    },
+    {
+      "term": "coverEditId",
+      "definition": "An optional integer identifying an existing cover being modified (renewed or increased). When provided, existing allocation in pools is excluded from capacity checks.",
+      "type": "integer"
+    },
+    {
+      "term": "weightedAveragePrice",
+      "definition": "The capacity-weighted mean of target prices across all pools that can underwrite a given product, expressed in basis points (0-10,000).",
+      "type": "integer (basis points)"
+    },
+    {
+      "term": "Cover Router",
+      "definition": "The Nexus Mutual off-chain service that optimally allocates a cover request across staking pools to minimise the buyer's premium. The Cover Router REST API exposes its capacity, pricing, and quote endpoints.",
+      "related": ["poolAllocationRequests", "Quote"]
+    }
+  ]
+}

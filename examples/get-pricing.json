@@ -1,0 +1,25 @@
+{
+  "summary": "Get pricing data for product 1 across all staking pools",
+  "request": {
+    "method": "GET",
+    "url": "https://api.nexusmutual.io/v2/pricing/products/1",
+    "parameters": {}
+  },
+  "response": {
+    "status": 200,
+    "body": {
+      "productId": 1,
+      "pricePerPool": [
+        {
+          "poolId": 1,
+          "targetPrice": 250
+        },
+        {
+          "poolId": 2,
+          "targetPrice": 350
+        }
+      ],
+      "weightedAveragePrice": 300
+    }
+  }
+}

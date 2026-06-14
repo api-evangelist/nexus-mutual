@@ -1,0 +1,42 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "https://api.nexusmutual.io/schemas/PricingResult",
+  "title": "PricingResult",
+  "description": "Pricing data for a cover product across all staking pools, including per-pool target prices and a weighted average.",
+  "type": "object",
+  "properties": {
+    "productId": {
+      "type": "integer",
+      "description": "The cover product id"
+    },
+    "pricePerPool": {
+      "type": "array",
+      "description": "Array of pricing data per staking pool",
+      "items": {
+        "$ref": "#/definitions/PoolPricing"
+      }
+    },
+    "weightedAveragePrice": {
+      "type": "integer",
+      "description": "The capacity-weighted average price across all pools, expressed as basis points (0-10,000)"
+    }
+  },
+  "required": ["productId", "pricePerPool", "weightedAveragePrice"],
+  "definitions": {
+    "PoolPricing": {
+      "type": "object",
+      "description": "Pricing information for a single staking pool",
+      "properties": {
+        "poolId": {
+          "type": "integer",
+          "description": "The staking pool id"
+        },
+        "targetPrice": {
+          "type": "integer",
+          "description": "The target annual price for this pool, expressed as basis points (0-10,000)"
+        }
+      },
+      "required": ["poolId", "targetPrice"]
+    }
+  }
+}
