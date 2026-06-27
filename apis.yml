@@ -177,7 +177,7 @@ common:
   url: https://dune.com/nexus_mutual
 - type: Documentation
   url: https://docs.nexusmutual.io/
-- type: SDK
+- type: SDKs
   url: https://sdk.nexusmutual.io/
 - type: BugBounty
   url: https://immunefi.com/bounty/nexusmutual/
