@@ -161,6 +161,8 @@ apis:
     path: /v2/products
     method: GET
 common:
+- type: DomainSecurity
+  url: security/nexus-mutual-domain-security.yml
 - type: Plans
   url: https://nexusmutual.io/plans/
 - type: RateLimits
@@ -187,6 +189,8 @@ common:
   url: https://dune.com/nexus_mutual
 - type: Application
   url: https://app.nexusmutual.io/
+- type: Blog
+  url: https://nexusmutual.io/blog
 maintainers:
 - FN: Collective Risk Services CIC
   url: https://nexusmutual.io
