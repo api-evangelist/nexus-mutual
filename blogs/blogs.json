@@ -1,0 +1,21 @@
+{
+  "repo": "nexus-mutual",
+  "feeds": [
+    {
+      "source": "https://nexusmutual.io/blog",
+      "feed_url": "https://nexusmutual.io/blog",
+      "title": "",
+      "saved": 0,
+      "method": "none"
+    },
+    {
+      "source": "https://app.nexusmutual.io/",
+      "feed_url": "https://app.nexusmutual.io/",
+      "title": "",
+      "saved": 0,
+      "method": "none"
+    }
+  ],
+  "fetched": "2026-07-11T11:50:51Z",
+  "post_count": 5
+}
