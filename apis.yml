@@ -161,6 +161,8 @@ apis:
     path: /v2/products
     method: GET
 common:
+- type: AgenticAccess
+  url: agentic-access/nexus-mutual-agentic-access.yml
 - type: DomainSecurity
   url: security/nexus-mutual-domain-security.yml
 - type: Plans
