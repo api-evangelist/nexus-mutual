@@ -86,6 +86,15 @@ apis:
   - type: GraphQL
     url: graphql/nexus-mutual-graphql.md
 common:
+- type: IssueTracker
+  url: https://github.com/NexusMutual/cover-router/issues
+- type: Releases
+  url: https://github.com/NexusMutual/cover-router/releases
+- type: ContributionGuide
+  url: https://github.com/NexusMutual/.github/blob/master/CONTRIBUTING.md
+- type: License
+  name: MIT
+  url: https://github.com/NexusMutual/cover-router/blob/dev/LICENSE
 - type: AgenticAccess
   url: agentic-access/nexus-mutual-agentic-access.yml
 - type: DomainSecurity
