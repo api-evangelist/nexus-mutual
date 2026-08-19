@@ -1,0 +1,36 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Cover Router Capacity Pricing API",
+    "version": "2.4.1"
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Pricing",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "GET /v2/pricing/products/{productId}",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "http://127.0.0.1:3000/v2/pricing/products/:productId",
+            "params": [
+              {
+                "name": "productId",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "Get pricing data for a specific product"
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

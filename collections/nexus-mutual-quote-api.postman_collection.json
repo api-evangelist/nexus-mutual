@@ -1,0 +1,206 @@
+{
+  "item": [
+    {
+      "id": "1019e3aa-2921-44c6-a59b-e0b17d9d68e4",
+      "name": "Quote",
+      "description": {
+        "content": "",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "bded0b4b-1b4f-4f6c-a3b2-61079bc145ae",
+          "name": "Get a quote for a cover",
+          "request": {
+            "name": "Get a quote for a cover",
+            "description": {
+              "content": "Get a quote for a cover",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "v2",
+                "quote"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "productId",
+                  "value": "<integer>",
+                  "description": "(Required) "
+                },
+                {
+                  "disabled": false,
+                  "key": "amount",
+                  "value": "<string>",
+                  "description": "(Required) "
+                },
+                {
+                  "disabled": false,
+                  "key": "period",
+                  "value": "<integer>",
+                  "description": "(Required) "
+                },
+                {
+                  "disabled": false,
+                  "key": "coverAsset",
+                  "value": "<integer>",
+                  "description": "(Required) "
+                },
+                {
+                  "disabled": false,
+                  "key": "coverEditId",
+                  "value": "<integer>"
+                }
+              ],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "534016c1-12c1-4c9f-848b-8ec90c7ad1b1",
+              "name": "Returns a quote object",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v2",
+                    "quote"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "productId",
+                      "value": "<integer>"
+                    },
+                    {
+                      "key": "amount",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "period",
+                      "value": "<integer>"
+                    },
+                    {
+                      "key": "coverAsset",
+                      "value": "<integer>"
+                    },
+                    {
+                      "key": "coverEditId",
+                      "value": "<integer>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"quote\": {\n    \"totalCoverAmountInAsset\": \"string\",\n    \"annualPrice\": \"string\",\n    \"premiumInNXM\": \"string\",\n    \"premiumInAsset\": \"string\",\n    \"poolAllocationRequests\": [\n      {\n        \"poolId\": \"string\",\n        \"coverAmountInAsset\": \"string\",\n        \"skip\": false\n      },\n      {\n        \"poolId\": \"string\",\n        \"coverAmountInAsset\": \"string\",\n        \"skip\": false\n      }\n    ],\n    \"asset\": {\n      \"id\": 8142,\n      \"symbol\": \"string\",\n      \"decimals\": 18\n    }\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "06528409-4647-452d-b19e-b8b68f1a84bd",
+              "name": "Invalid Product Id, or Product is deprecated, or Not enough capacity, or Not original cover id",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v2",
+                    "quote"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "productId",
+                      "value": "<integer>"
+                    },
+                    {
+                      "key": "amount",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "period",
+                      "value": "<integer>"
+                    },
+                    {
+                      "key": "coverAsset",
+                      "value": "<integer>"
+                    },
+                    {
+                      "key": "coverEditId",
+                      "value": "<integer>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Bad Request",
+              "code": 400,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "http://127.0.0.1:3000",
+      "key": "baseUrl"
+    }
+  ],
+  "info": {
+    "_postman_id": "521b9bec-26f4-422f-a958-274f3928ff02",
+    "name": "Cover Router Capacity Quote API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "",
+      "type": "text/plain"
+    }
+  }
+}

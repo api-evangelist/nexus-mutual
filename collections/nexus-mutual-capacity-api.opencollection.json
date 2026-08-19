@@ -1,0 +1,119 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Cover Router Capacity API",
+    "version": "2.4.1"
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Capacity",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "GET /v2/capacity/",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "http://127.0.0.1:3000/v2/capacity/",
+            "params": [
+              {
+                "name": "period",
+                "value": "",
+                "type": "query",
+                "description": "Coverage period in days"
+              }
+            ]
+          },
+          "docs": "Get capacity data for all products"
+        },
+        {
+          "info": {
+            "name": "GET /v2/capacity/{productId}",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "http://127.0.0.1:3000/v2/capacity/:productId",
+            "params": [
+              {
+                "name": "productId",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "period",
+                "value": "",
+                "type": "query",
+                "description": "Coverage period in days"
+              },
+              {
+                "name": "coverEditId",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          },
+          "docs": "Get capacity data for a product"
+        },
+        {
+          "info": {
+            "name": "GET /v2/capacity/pools/{poolId}",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "http://127.0.0.1:3000/v2/capacity/pools/:poolId",
+            "params": [
+              {
+                "name": "poolId",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "period",
+                "value": "",
+                "type": "query",
+                "description": "Coverage period in days"
+              }
+            ]
+          },
+          "docs": "Gets capacity data for a pool, including all its products"
+        },
+        {
+          "info": {
+            "name": "GET /v2/capacity/pools/{poolId}/products/{productId}",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "http://127.0.0.1:3000/v2/capacity/pools/:poolId/products/:productId",
+            "params": [
+              {
+                "name": "poolId",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "productId",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "period",
+                "value": "",
+                "type": "query",
+                "description": "Coverage period in days"
+              }
+            ]
+          },
+          "docs": "Get capacity data for a specific product in a specific pool"
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

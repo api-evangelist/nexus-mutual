@@ -1,0 +1,875 @@
+{
+  "item": [
+    {
+      "id": "5fd372ba-e9bc-484f-a1fe-776116caa202",
+      "name": "Capacity",
+      "description": {
+        "content": "",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "50a5898c-77be-4bca-9872-55cb9361b993",
+          "name": "Get capacity data for all products",
+          "request": {
+            "name": "Get capacity data for all products",
+            "description": {
+              "content": "Get capacity data for all products",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "v2",
+                "capacity",
+                ""
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "period",
+                  "value": "30",
+                  "description": "Coverage period in days"
+                }
+              ],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "947b6f9d-7e8f-4dac-bc10-15334f32cf96",
+              "name": "Returns capacity for all products",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v2",
+                    "capacity",
+                    ""
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "period",
+                      "value": "30"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "[\n  {\n    \"availableCapacity\": [\n      {\n        \"assetId\": 6841,\n        \"amount\": \"string\",\n        \"asset\": {\n          \"id\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          },\n          \"symbol\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          },\n          \"decimals\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          }\n        }\n      },\n      {\n        \"assetId\": 8240,\n        \"amount\": \"string\",\n        \"asset\": {\n          \"id\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          },\n          \"symbol\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          },\n          \"decimals\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          }\n        }\n      }\n    ],\n    \"allocatedNxm\": \"string\",\n    \"minAnnualPrice\": \"string\",\n    \"maxAnnualPrice\": \"string\",\n    \"productId\": 6113\n  },\n  {\n    \"availableCapacity\": [\n      {\n        \"assetId\": 5098,\n        \"amount\": \"string\",\n        \"asset\": {\n          \"id\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          },\n          \"symbol\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          },\n          \"decimals\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          }\n        }\n      },\n      {\n        \"assetId\": 2505,\n        \"amount\": \"string\",\n        \"asset\": {\n          \"id\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          },\n          \"symbol\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          },\n          \"decimals\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          }\n        }\n      }\n    ],\n    \"allocatedNxm\": \"string\",\n    \"minAnnualPrice\": \"string\",\n    \"maxAnnualPrice\": \"string\",\n    \"productId\": 9047\n  }\n]",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "d02f33f3-9ad1-4480-a6ef-974b94c335fd",
+              "name": "Invalid period",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v2",
+                    "capacity",
+                    ""
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "period",
+                      "value": "30"
+                    }
+                  ],
+                  "variable": []
+                },
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Bad Request",
+              "code": 400,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "9163da8f-9f41-4040-bf8f-b7d2647550a1",
+              "name": "Internal Server Error",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v2",
+                    "capacity",
+                    ""
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "period",
+                      "value": "30"
+                    }
+                  ],
+                  "variable": []
+                },
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "085e6d47-f87a-4193-b0d5-2fdf173c0ab8",
+          "name": "Get capacity data for a product",
+          "request": {
+            "name": "Get capacity data for a product",
+            "description": {
+              "content": "Get capacity data for a product",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "v2",
+                "capacity",
+                ":productId"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "period",
+                  "value": "30",
+                  "description": "Coverage period in days"
+                },
+                {
+                  "disabled": false,
+                  "key": "coverEditId",
+                  "value": "<integer>"
+                }
+              ],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<integer>",
+                  "key": "productId",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "038272aa-497d-4692-adb2-e6723012b91d",
+              "name": "Returns capacity data for a product, including capacityPerPool data.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v2",
+                    "capacity",
+                    ":productId"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "period",
+                      "value": "30"
+                    },
+                    {
+                      "key": "coverEditId",
+                      "value": "<integer>"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<integer>",
+                      "key": "productId",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"productId\": 1,\n  \"availableCapacity\": [\n    {\n      \"assetId\": 1,\n      \"amount\": \"1000000000000000000\",\n      \"asset\": {\n        \"id\": 1,\n        \"symbol\": \"ETH\",\n        \"decimals\": 18\n      }\n    }\n  ],\n  \"allocatedNxm\": \"500000000000000000\",\n  \"minAnnualPrice\": \"0.025\",\n  \"maxAnnualPrice\": \"0.1\",\n  \"capacityPerPool\": [\n    {\n      \"poolId\": 1,\n      \"availableCapacity\": [\n        {\n          \"assetId\": 1,\n          \"amount\": \"500000000000000000\",\n          \"asset\": {\n            \"id\": 1,\n            \"symbol\": \"ETH\",\n            \"decimals\": 18\n          }\n        }\n      ],\n      \"allocatedNxm\": \"250000000000000000\",\n      \"minAnnualPrice\": \"0.025\",\n      \"maxAnnualPrice\": \"0.1\"\n    }\n  ]\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "e0237ca1-38c8-4707-95d3-832292a87040",
+              "name": "Invalid productId or period",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v2",
+                    "capacity",
+                    ":productId"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "period",
+                      "value": "30"
+                    },
+                    {
+                      "key": "coverEditId",
+                      "value": "<integer>"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<integer>",
+                      "key": "productId",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Bad Request",
+              "code": 400,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "78ded389-e99d-4531-920b-9f30f101fc1b",
+              "name": "Internal Server Error",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v2",
+                    "capacity",
+                    ":productId"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "period",
+                      "value": "30"
+                    },
+                    {
+                      "key": "coverEditId",
+                      "value": "<integer>"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<integer>",
+                      "key": "productId",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "bf3f34d7-c902-420a-bf89-661cf2a69d45",
+          "name": "Gets capacity data for a pool, including all its products",
+          "request": {
+            "name": "Gets capacity data for a pool, including all its products",
+            "description": {
+              "content": "Gets capacity data for a pool, including all its products",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "v2",
+                "capacity",
+                "pools",
+                ":poolId"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "period",
+                  "value": "30",
+                  "description": "Coverage period in days"
+                }
+              ],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<integer>",
+                  "key": "poolId",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "acc4575b-e159-4cc7-bb15-e28eda6b32e3",
+              "name": "Returns capacity for all products in the specified pool",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v2",
+                    "capacity",
+                    "pools",
+                    ":poolId"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "period",
+                      "value": "30"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<integer>",
+                      "key": "poolId",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"poolId\": 1,\n  \"utilizationRate\": 5000,\n  \"productsCapacity\": [\n    {\n      \"productId\": 1,\n      \"availableCapacity\": [\n        {\n          \"assetId\": 1,\n          \"amount\": \"1000000000000000000\",\n          \"asset\": {\n            \"id\": 1,\n            \"symbol\": \"ETH\",\n            \"decimals\": 18\n          }\n        }\n      ],\n      \"allocatedNxm\": \"500000000000000000\",\n      \"minAnnualPrice\": \"0.025\",\n      \"maxAnnualPrice\": \"0.1\"\n    }\n  ]\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "2b8912a5-07cd-416a-878e-e3d7f66cee70",
+              "name": "Invalid pool id or period",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v2",
+                    "capacity",
+                    "pools",
+                    ":poolId"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "period",
+                      "value": "30"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<integer>",
+                      "key": "poolId",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Bad Request",
+              "code": 400,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "b75190a3-3c75-4c19-a473-18a8d2be54fb",
+              "name": "Internal Server Error",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v2",
+                    "capacity",
+                    "pools",
+                    ":poolId"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "period",
+                      "value": "30"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<integer>",
+                      "key": "poolId",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "ec9c9810-e619-41b8-95f1-72fc4e1914f4",
+          "name": "Get capacity data for a specific product in a specific pool",
+          "request": {
+            "name": "Get capacity data for a specific product in a specific pool",
+            "description": {
+              "content": "Get capacity data for a specific product in a specific pool",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "v2",
+                "capacity",
+                "pools",
+                ":poolId",
+                "products",
+                ":productId"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "period",
+                  "value": "30",
+                  "description": "Coverage period in days"
+                }
+              ],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<integer>",
+                  "key": "poolId",
+                  "description": "(Required) "
+                },
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<integer>",
+                  "key": "productId",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "dbf88926-a6fa-48a8-ae73-95b764c53792",
+              "name": "Returns capacity for the specified product in the specified pool",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v2",
+                    "capacity",
+                    "pools",
+                    ":poolId",
+                    "products",
+                    ":productId"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "period",
+                      "value": "30"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<integer>",
+                      "key": "poolId",
+                      "description": "(Required) "
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<integer>",
+                      "key": "productId",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"availableCapacity\": [\n    {\n      \"assetId\": 2348,\n      \"amount\": \"string\",\n      \"asset\": {\n        \"id\": 9119,\n        \"symbol\": \"string\",\n        \"decimals\": 18\n      }\n    },\n    {\n      \"assetId\": 2465,\n      \"amount\": \"string\",\n      \"asset\": {\n        \"id\": 2616,\n        \"symbol\": \"string\",\n        \"decimals\": 18\n      }\n    }\n  ],\n  \"allocatedNxm\": \"string\",\n  \"minAnnualPrice\": \"string\",\n  \"maxAnnualPrice\": \"string\",\n  \"productId\": 9585\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "7ae41e8a-be12-4292-ac42-fa5ae2549ddb",
+              "name": "Invalid pool id, product id, or period",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v2",
+                    "capacity",
+                    "pools",
+                    ":poolId",
+                    "products",
+                    ":productId"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "period",
+                      "value": "30"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<integer>",
+                      "key": "poolId",
+                      "description": "(Required) "
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<integer>",
+                      "key": "productId",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Bad Request",
+              "code": 400,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "81823498-123a-41c1-8b0a-ef0fae6b3878",
+              "name": "Product not found in the specified pool",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v2",
+                    "capacity",
+                    "pools",
+                    ":poolId",
+                    "products",
+                    ":productId"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "period",
+                      "value": "30"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<integer>",
+                      "key": "poolId",
+                      "description": "(Required) "
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<integer>",
+                      "key": "productId",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Not Found",
+              "code": 404,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "5e3833ae-d710-46a1-bfa0-df03705f1bc7",
+              "name": "Internal Server Error",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v2",
+                    "capacity",
+                    "pools",
+                    ":poolId",
+                    "products",
+                    ":productId"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "period",
+                      "value": "30"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<integer>",
+                      "key": "poolId",
+                      "description": "(Required) "
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<integer>",
+                      "key": "productId",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "http://127.0.0.1:3000",
+      "key": "baseUrl"
+    }
+  ],
+  "info": {
+    "_postman_id": "3dd078d7-8ab3-4934-b6f7-840ff9175b9a",
+    "name": "Cover Router Capacity API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "",
+      "type": "text/plain"
+    }
+  }
+}
