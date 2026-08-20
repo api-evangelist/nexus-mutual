@@ -75,6 +75,8 @@ apis:
   humanURL: https://docs.nexusmutual.io/developers/
   baseURL: https://api.nexusmutual.io/v2
   tags:
+  - Quotes
+  tags_raw:
   - Quote
   properties:
   - type: OpenAPI
