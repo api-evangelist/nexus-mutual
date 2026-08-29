@@ -9,6 +9,20 @@ description: 'Nexus Mutual is a decentralized insurance protocol built on Ethere
   cover purchase flows on top of the Nexus Mutual protocol.
 
   '
+deliveryModel:
+  model: open-core
+  license: MIT
+  open_source: true
+  commercial: true
+  callable_host: true
+  label: Open core · an OSS project plus a commercial hosted product
+  confidence: high
+  source:
+  - license
+  - openapi
+  - pricing
+  generated: '2026-08-28'
+  method: derived
 accessModel:
   pricing: free
   onboarding: unknown
