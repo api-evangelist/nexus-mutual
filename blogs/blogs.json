@@ -2,23 +2,21 @@
   "repo": "nexus-mutual",
   "feeds": [
     {
-      "source": "https://nexusmutual.io/blog",
-      "feed_url": "https://nexusmutual.io/blog",
-      "title": "",
-      "saved": 0,
-      "method": "none",
-      "nature": "vendor-blog",
-      "nature_basis": "path_blog"
-    },
-    {
       "source": "https://app.nexusmutual.io/",
       "feed_url": "https://app.nexusmutual.io/",
       "title": "",
       "saved": 0,
       "method": "none"
+    },
+    {
+      "source": "https://nexusmutual.io/blog",
+      "feed_url": "https://nexusmutual.io/blog",
+      "title": "",
+      "saved": 0,
+      "method": "none"
     }
   ],
-  "fetched": "2026-08-30T22:33:40Z",
+  "fetched": "2026-09-06T19:17:18Z",
   "post_count": 5,
   "feed_nature": "vendor-blog",
   "feed_nature_basis": "path_blog",

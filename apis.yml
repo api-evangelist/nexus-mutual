@@ -102,6 +102,8 @@ apis:
   - type: GraphQL
     url: graphql/nexus-mutual-graphql.md
 common:
+- type: Website
+  url: https://www.nexusmutual.io/
 - type: IssueTracker
   url: https://github.com/NexusMutual/cover-router/issues
 - type: Releases
