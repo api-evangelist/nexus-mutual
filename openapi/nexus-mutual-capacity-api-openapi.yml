@@ -1,4 +1,4 @@
-openapi: 3.0.2
+openapi: 3.2.0
 info:
   title: Cover Router Capacity API
   version: 2.4.1
@@ -39,6 +39,10 @@ paths:
           description: Invalid period
         '500':
           description: Internal Server Error
+      summary: Get capacity
+      x-summary-source: derived
+      operationId: getV2Capacity
+      x-operation-id-source: derived
   /v2/capacity/{productId}:
     get:
       tags:
@@ -100,6 +104,10 @@ paths:
           description: Invalid productId or period
         '500':
           description: Internal Server Error
+      summary: Get capacity by product id
+      x-summary-source: derived
+      operationId: getV2CapacityByProductId
+      x-operation-id-source: derived
   /v2/capacity/pools/{poolId}:
     get:
       tags:
@@ -157,6 +165,10 @@ paths:
           description: Invalid pool id or period
         '500':
           description: Internal Server Error
+      summary: Get capacity pools by pool id
+      x-summary-source: derived
+      operationId: getV2CapacityPoolsByPoolId
+      x-operation-id-source: derived
   /v2/capacity/pools/{poolId}/products/{productId}:
     get:
       tags:
@@ -196,34 +208,12 @@ paths:
           description: Product not found in the specified pool
         '500':
           description: Internal Server Error
+      summary: Get capacity pools by pool id products by product id
+      x-summary-source: derived
+      operationId: getV2CapacityPoolsByPoolIdProductsByProductId
+      x-operation-id-source: derived
 components:
   schemas:
-    AvailableCapacity:
-      type: object
-      properties:
-        assetId:
-          type: integer
-          description: The asset id
-        amount:
-          type: string
-          format: integer
-          description: The capacity amount expressed in the asset
-        asset:
-          $ref: '#/components/schemas/AssetInfo'
-    AssetInfo:
-      type: object
-      description: An object containing asset info
-      properties:
-        id:
-          type: integer
-          description: The id of the asset
-        symbol:
-          type: string
-          description: The symbol of the asset
-        decimals:
-          type: integer
-          description: The decimals of the asset
-          example: 18
     CapacityResultWithPools:
       allOf:
       - $ref: '#/components/schemas/CapacityResult'
@@ -240,6 +230,28 @@ components:
                   poolId:
                     type: integer
                     description: The pool id
+    CapacityResult:
+      allOf:
+      - $ref: '#/components/schemas/BaseCapacityFields'
+      - type: object
+        properties:
+          productId:
+            type: integer
+            description: The product id
+    AssetInfo:
+      type: object
+      description: An object containing asset info
+      properties:
+        id:
+          type: integer
+          description: The id of the asset
+        symbol:
+          type: string
+          description: The symbol of the asset
+        decimals:
+          type: integer
+          description: The decimals of the asset
+          example: 18
     BaseCapacityFields:
       type: object
       properties:
@@ -258,11 +270,15 @@ components:
         maxAnnualPrice:
           type: string
           description: The maximal annual price is a percentage value between 0-1.
-    CapacityResult:
-      allOf:
-      - $ref: '#/components/schemas/BaseCapacityFields'
-      - type: object
-        properties:
-          productId:
-            type: integer
-            description: The product id
+    AvailableCapacity:
+      type: object
+      properties:
+        assetId:
+          type: integer
+          description: The asset id
+        amount:
+          type: string
+          format: integer
+          description: The capacity amount expressed in the asset
+        asset:
+          $ref: '#/components/schemas/AssetInfo'
