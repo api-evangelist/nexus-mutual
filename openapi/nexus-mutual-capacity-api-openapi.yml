@@ -230,6 +230,18 @@ components:
                   poolId:
                     type: integer
                     description: The pool id
+    AvailableCapacity:
+      type: object
+      properties:
+        assetId:
+          type: integer
+          description: The asset id
+        amount:
+          type: string
+          format: integer
+          description: The capacity amount expressed in the asset
+        asset:
+          $ref: '#/components/schemas/AssetInfo'
     CapacityResult:
       allOf:
       - $ref: '#/components/schemas/BaseCapacityFields'
@@ -238,20 +250,6 @@ components:
           productId:
             type: integer
             description: The product id
-    AssetInfo:
-      type: object
-      description: An object containing asset info
-      properties:
-        id:
-          type: integer
-          description: The id of the asset
-        symbol:
-          type: string
-          description: The symbol of the asset
-        decimals:
-          type: integer
-          description: The decimals of the asset
-          example: 18
     BaseCapacityFields:
       type: object
       properties:
@@ -270,15 +268,17 @@ components:
         maxAnnualPrice:
           type: string
           description: The maximal annual price is a percentage value between 0-1.
-    AvailableCapacity:
+    AssetInfo:
       type: object
+      description: An object containing asset info
       properties:
-        assetId:
+        id:
           type: integer
-          description: The asset id
-        amount:
+          description: The id of the asset
+        symbol:
           type: string
-          format: integer
-          description: The capacity amount expressed in the asset
-        asset:
-          $ref: '#/components/schemas/AssetInfo'
+          description: The symbol of the asset
+        decimals:
+          type: integer
+          description: The decimals of the asset
+          example: 18
