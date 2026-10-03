@@ -214,34 +214,6 @@ paths:
       x-operation-id-source: derived
 components:
   schemas:
-    CapacityResultWithPools:
-      allOf:
-      - $ref: '#/components/schemas/CapacityResult'
-      - type: object
-        properties:
-          capacityPerPool:
-            type: array
-            description: The capacity per pool breakdown
-            items:
-              allOf:
-              - $ref: '#/components/schemas/BaseCapacityFields'
-              - type: object
-                properties:
-                  poolId:
-                    type: integer
-                    description: The pool id
-    AvailableCapacity:
-      type: object
-      properties:
-        assetId:
-          type: integer
-          description: The asset id
-        amount:
-          type: string
-          format: integer
-          description: The capacity amount expressed in the asset
-        asset:
-          $ref: '#/components/schemas/AssetInfo'
     CapacityResult:
       allOf:
       - $ref: '#/components/schemas/BaseCapacityFields'
@@ -282,3 +254,31 @@ components:
           type: integer
           description: The decimals of the asset
           example: 18
+    CapacityResultWithPools:
+      allOf:
+      - $ref: '#/components/schemas/CapacityResult'
+      - type: object
+        properties:
+          capacityPerPool:
+            type: array
+            description: The capacity per pool breakdown
+            items:
+              allOf:
+              - $ref: '#/components/schemas/BaseCapacityFields'
+              - type: object
+                properties:
+                  poolId:
+                    type: integer
+                    description: The pool id
+    AvailableCapacity:
+      type: object
+      properties:
+        assetId:
+          type: integer
+          description: The asset id
+        amount:
+          type: string
+          format: integer
+          description: The capacity amount expressed in the asset
+        asset:
+          $ref: '#/components/schemas/AssetInfo'
