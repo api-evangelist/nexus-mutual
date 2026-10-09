@@ -1,3 +1,7 @@
+# Provenance stamped 2026-10-07 (roadmap#943): written by an API Evangelist sweep (undated — the file carries no date and git cannot supply one), not
+# harvested from the provider. `method: generated` so the economics campaign may replace it with a
+# dated, verbatim transcription; every figure below is unverified until it does.
+method: generated
 plans:
   - name: Open Protocol Access
     description: >
@@ -20,3 +24,15 @@ plans:
       - UI integrators must display mandatory T&C disclaimers
       - Restricted countries apply (see Terms of Use)
       - Commission destination address must be whitelisted by Nexus Mutual
+x-canonical:
+  generated: '2026-10-08'
+  vocabulary: all/0-working/economics/plans-canonical.yml
+  models: []
+  units: []
+  plans:
+  - name: Open Protocol Access
+    access: other
+    model: unstated
+    model_how: derived
+    units: []
+    periods: []
